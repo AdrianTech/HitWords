@@ -39,7 +39,7 @@ const PlayerArea = ({
                 {isPlaying && <span>{word}</span>}
             </div>
             <form>
-                <label for="words" />
+                <label htmlFor="words" />
                 <input
                     type="text"
                     name="value"
@@ -47,7 +47,7 @@ const PlayerArea = ({
                     value={value}
                     placeholder="Type word here"
                     onChange={clickOnChange}
-                    autoFocus="true"
+                    autoFocus
                 />
             </form>
             <button
