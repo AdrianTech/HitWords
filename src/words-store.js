@@ -9,6 +9,6 @@ function splitWords(arr) {
     return filteredArr;
 }
 splitWords(arr);
-console.log(filteredArr);
+//console.log(filteredArr);
 
 export default filteredArr;
