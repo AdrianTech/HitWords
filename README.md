@@ -1,2 +1,0 @@
-# hitWords
-Created with CodeSandbox
