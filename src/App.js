@@ -132,12 +132,10 @@ class App extends Component {
     };
 
     componentDidUpdate() {
-        //console.log(this.time)
         const { isPlaying, word, value, score } = this.state;
         if (isPlaying) {
-            if (word === value) {
+            if (word === value.toLowerCase()) {
                 this.startGame();
-                //console.log("Correct!");
                 this.setState({
                     score: this.state.score + 1,
                     finalHits: this.state.finalHits + 1
@@ -155,12 +153,10 @@ class App extends Component {
     }
 
     render() {
-        const { message, isPlaying } = this.state;
-
         return (
             <div className="main">
                 <header>
-                    <h1>Hit Word</h1>
+                    <h1>Hit Words</h1>
                 </header>
                 <Select
                     clickOnChange={this.handleForms}
