@@ -172,7 +172,6 @@ class App extends Component {
                     clickOnChange={this.handleForms}
                     clickButton={this.startGame}
                 />
-                <footer>Made by AdrianTech 2019</footer>
             </div>
         );
     }
