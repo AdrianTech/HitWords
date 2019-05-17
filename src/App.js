@@ -144,6 +144,7 @@ class App extends Component {
     };
 
     startGame = () => {
+        //const {select} = this.state;
         clearInterval(this.set);
         clearInterval(this.intervalState);
         this.setState({
@@ -153,12 +154,12 @@ class App extends Component {
             finalHits: 0,
             isPlaying: true
         });
-        this.setValue();
         this.drawWords();
+        this.setValue();
     };
 
     componentDidUpdate() {
-        const { isPlaying, word, value, score, select } = this.state;
+        const { isPlaying, word, value, score } = this.state;
         if (isPlaying) {
             if (word === value.toLowerCase()) {
                 this.startGame();
@@ -174,7 +175,6 @@ class App extends Component {
                         message: winnerSentence[randomSentence]
                     });
                 }
-                console.log(typeof select);
             }
         }
     }
@@ -197,11 +197,6 @@ class App extends Component {
                         clickButton={this.startGame}
                     />
                 </div>
-                <footer>
-                    <p>
-                        Made by AdrianTech 2019 <span>v.1.1</span>
-                    </p>
-                </footer>
             </>
         );
     }

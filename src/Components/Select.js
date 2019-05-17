@@ -9,6 +9,7 @@ const Select = ({ select, isPlaying, clickOnChange, clickButton }) => (
                 <option value="medium">Quicker [3 secs]</option>
                 <option value="hard">Speedy [2 secs]</option>
                 <option value="special">Faster and Faster</option>
+                {/* <option value="super">Super</option> */}
             </select>
         </label>
         <button onClick={clickButton} disabled={!select || isPlaying}>
