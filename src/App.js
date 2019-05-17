@@ -63,18 +63,44 @@ class App extends Component {
         }));
     };
     intervalFn = () => {
+        const { score, finalHits } = this.state;
+        const winnerOver50 = [
+            "You reached over 50 hits! Congrats!",
+            `Thank you for this ${finalHits}`,
+            `${finalHits} hits! The next step is 100 hits...`
+        ];
+        const winnerOver100 = [
+            `You are a Hit Master! ${finalHits} hits! Superb!`,
+            `That was a focusing! ${finalHits} hits`,
+            `Hitting masterpiece! ${finalHits} hits `,
+            `No one can do this better like you! Great ${finalHits} hits!`
+        ];
+        let draw;
         let randomSentence;
         if (this.time > 0) {
             this.time--;
             if (this.time === 0) {
-                if (this.state.score > 0) {
+                if (score > 0) {
                     randomSentence = Math.floor(
                         Math.random() * randomLossSentence.length
                     );
+                    draw = randomLossSentence[randomSentence];
+                }
+                if (finalHits > 50) {
+                    const randomSentence = Math.floor(
+                        Math.random() * winnerOver50.length
+                    );
+                    draw = winnerOver50[randomSentence];
+                }
+                if (finalHits >= 100) {
+                    const randomSentence = Math.floor(
+                        Math.random() * winnerOver100.length
+                    );
+                    draw = winnerOver100[randomSentence];
                 }
                 this.setState({
                     isPlaying: false,
-                    message: randomLossSentence[randomSentence],
+                    message: draw,
                     score: 0
                 });
             }
@@ -132,12 +158,10 @@ class App extends Component {
     };
 
     componentDidUpdate() {
-        //console.log(this.time)
-        const { isPlaying, word, value, score } = this.state;
+        const { isPlaying, word, value, score, select } = this.state;
         if (isPlaying) {
-            if (word === value) {
+            if (word === value.toLowerCase()) {
                 this.startGame();
-                //console.log("Correct!");
                 this.setState({
                     score: this.state.score + 1,
                     finalHits: this.state.finalHits + 1
@@ -150,30 +174,35 @@ class App extends Component {
                         message: winnerSentence[randomSentence]
                     });
                 }
+                console.log(typeof select);
             }
         }
     }
 
     render() {
-        const { message, isPlaying } = this.state;
-
         return (
-            <div className="main">
-                <header>
-                    <h1>Hit Word</h1>
-                </header>
-                <Select
-                    clickOnChange={this.handleForms}
-                    {...this.state}
-                    clickButton={this.startGame}
-                />
-                <PlayerArea
-                    {...this.state}
-                    clickOnChange={this.handleForms}
-                    clickButton={this.startGame}
-                />
-                <footer>Made by AdrianTech 2019</footer>
-            </div>
+            <>
+                <div className="main">
+                    <header>
+                        <h1>Hit Words</h1>
+                    </header>
+                    <Select
+                        clickOnChange={this.handleForms}
+                        {...this.state}
+                        clickButton={this.startGame}
+                    />
+                    <PlayerArea
+                        {...this.state}
+                        clickOnChange={this.handleForms}
+                        clickButton={this.startGame}
+                    />
+                </div>
+                <footer>
+                    <p>
+                        Made by AdrianTech 2019 <span>v.1.1</span>
+                    </p>
+                </footer>
+            </>
         );
     }
 }

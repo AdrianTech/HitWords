@@ -22,7 +22,7 @@ const PlayerArea = ({
             <div className="results">
                 {finalHits > 1 && !isPlaying ? (
                     <h3>
-                        Final result:<span>{finalHits}</span>
+                        Final hits:<span>{finalHits}</span>
                     </h3>
                 ) : (
                     <h3>
