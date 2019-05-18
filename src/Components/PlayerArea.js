@@ -61,7 +61,7 @@ const PlayerArea = ({
                 {finalHits < 1 ? (
                     <h6>To start game select your level and click "Play"</h6>
                 ) : (
-                    <h4 style={{ color: isPlaying ? "#036621" : "#5f0303" }}>
+                    <h4 style={{ color: isPlaying ? "#036621" : "#9c0404" }}>
                         {message}
                     </h4>
                 )}

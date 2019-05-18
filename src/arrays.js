@@ -2,7 +2,7 @@ const randomLossSentence = [
     "Game over. Try again.",
     "You have been amazing. Hit one more time.",
     "Unfortunately, you lose, but Rome was not built in a day.",
-    "End of game. Next time you'll be better.",
+    "End of game. You'll be better next time.",
     "Over... but hope dies last. Play again."
 ];
 const winnerSentence = [

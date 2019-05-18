@@ -181,7 +181,6 @@ class App extends Component {
 
     render() {
         return (
-            <>
                 <div className="main">
                     <header>
                         <h1>Hit Words</h1>
@@ -197,7 +196,6 @@ class App extends Component {
                         clickButton={this.startGame}
                     />
                 </div>
-            </>
         );
     }
 }
