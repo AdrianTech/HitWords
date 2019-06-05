@@ -40,15 +40,27 @@ const PlayerArea = ({
             </div>
             <form>
                 <label htmlFor="words" />
-                <input
-                    type="text"
-                    name="value"
-                    id="words"
-                    value={value}
-                    placeholder="Type word here"
-                    onChange={clickOnChange}
-                    autoFocus
-                />
+                {isPlaying ? (
+                    <input
+                        type="text"
+                        name="value"
+                        id="words"
+                        value={value}
+                        placeholder="Type word here"
+                        onChange={clickOnChange}
+                        autoFocus
+                    />
+                ) : null}
+                {!isPlaying ? (
+                    <input
+                        type="text"
+                        name="value"
+                        id="words"
+                        value={value}
+                        placeholder="Type word here"
+                        onChange={clickOnChange}
+                    />
+                ) : null}
             </form>
             <button
                 className={btnTouch}
