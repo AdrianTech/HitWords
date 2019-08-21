@@ -10,8 +10,8 @@ const winnerSentence = [
     "Great job! Your mother is proud of you!",
     "Brilliant timming!",
     "Wonderfull hit! You really like to play this game.",
-    "You're a master.",
-    "Go big or go home. Keep it mind.",
+    "You're a master!.",
+    "Go big or go home. Keep that in mind.",
     "From zero to hero!",
     "Nice hit!",
     "Maybe Hit Master 2019?"
